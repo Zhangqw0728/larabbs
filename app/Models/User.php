@@ -21,6 +21,7 @@ class User extends Authenticatable implements MustVerifyEmailContracts
         'name',
         'email',
         'password',
+        'introduction',
     ];
 
     /**
