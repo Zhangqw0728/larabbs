@@ -44,9 +44,22 @@ class User extends Authenticatable implements MustVerifyEmailContracts
         'email_verified_at' => 'datetime',
     ];
 
+    /**
+     * 一个用户对应多个话题
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function topics()
     {
         return $this->hasMany(Topic::class);
+    }
+
+    /**
+     * 一个用户对应多个回复
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function replies()
+    {
+        return $this->hasMany(Reply::class);
     }
 
     public function isAuthorOf($model)
