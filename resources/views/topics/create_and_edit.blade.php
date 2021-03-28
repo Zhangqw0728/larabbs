@@ -59,7 +59,7 @@
     <script type="text/javascript" src="{{ asset('js/simditor.js') }}"></script>
     <script>
         $(document).ready(function () {
-            var editor = new Simditor({
+            let editor = new Simditor({
                 textarea: $('#editor'),
                 upload: {
                     url: '{{ route('topics.upload_image') }}',
