@@ -18,7 +18,7 @@ class SeedRolesAndPermissionsData extends Migration
      */
     public function up()
     {
-        // 需清楚缓存，否则会报错
+        // 需清除缓存，否则会报错
         app(Spatie\Permission\PermissionRegistrar::class)->forgetCachedPermissions();
 
         // 先创建权限
@@ -45,7 +45,7 @@ class SeedRolesAndPermissionsData extends Migration
     public function down()
     {
         // 需清楚缓存，否则会报错
-        app(Spatie\Permission\PermissionRegistrar::class)->forgetCachePermissions();
+        app(Spatie\Permission\PermissionRegistrar::class)->forgetCachedPermissions();
 
         // 清空所有数据表数据
         $tableNames = config('permission.table_names');
